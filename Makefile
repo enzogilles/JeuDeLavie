@@ -1,16 +1,48 @@
-all: main
+# Nom du compilateur
+CXX = g++
 
-CXX = clang++
-override CXXFLAGS += -lsfml-graphics -lsfml-window -lsfml-audio -lsfml-network -lsfml-system -g -Wmost -Werror 
+# Options de compilation
+CXXFLAGS = -Wall -Wextra -std=c++17
 
-SRCS = $(shell find . -name '.ccls-cache' -type d -prune -o -type f -name '*.cpp' -print | sed -e 's/ /\\ /g')
-HEADERS = $(shell find . -name '.ccls-cache' -type d -prune -o -type f -name '*.h' -print)
+# Bibliothèque graphique SFML
+LDFLAGS = -lsfml-graphics -lsfml-window -lsfml-system
 
-main: $(SRCS) $(HEADERS)
-	$(CXX) $(CXXFLAGS) $(SRCS) -o "$@"
+# Dossiers
+SRCDIR = src
+BUILDDIR = build
+BINDIR = bin
 
-main-debug: $(SRCS) $(HEADERS)
-	$(CXX) $(CXXFLAGS) -U_FORTIFY_SOURCE -O0 $(SRCS) -o "$@"
+# Fichiers sources et exécutables
+SRC = $(wildcard $(SRCDIR)/*.cpp)
+OBJ = $(patsubst $(SRCDIR)/%.cpp, $(BUILDDIR)/%.o, $(SRC))
+TARGET = $(BINDIR)/jeu_de_la_vie
 
+# Commande pour créer les dossiers si nécessaire
+MKDIR_P = mkdir -p
+
+# Règle principale
+all: $(TARGET)
+
+# Construction de l'exécutable
+$(TARGET): $(OBJ)
+	$(MKDIR_P) $(BINDIR)
+	$(CXX) $(CXXFLAGS) $^ -o $@ $(LDFLAGS)
+
+# Compilation des fichiers objets
+$(BUILDDIR)/%.o: $(SRCDIR)/%.cpp
+	$(MKDIR_P) $(BUILDDIR)
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
+# Exécution des tests unitaires
+test: $(TARGET)
+	./$(TARGET) test
+
+# Nettoyage des fichiers compilés
 clean:
-	rm -f main main-debug
+	rm -rf $(BUILDDIR) $(BINDIR)
+
+# Nettoyage complet (fichiers générés)
+distclean: clean
+	rm -rf out/*
+
+.PHONY: all clean distclean test
