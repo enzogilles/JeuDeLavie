@@ -16,7 +16,15 @@ Ce projet implémente le **Jeu de la Vie** de John Conway en C++, avec deux mode
 - Sauvegarde de l'état final dans un fichier (Mode Console).
 - Gestion des dimensions dynamiques de la grille.
 
+Lors de la phase de conception, modéliser votre programme avec les diagrammes suivants :
+- Diagramme de cas d’utilisation.
+- Diagramme de classe.
+- Diagramme d’activité.
+- Diagramme de séquence.
+
+
 ## Installation
+
 
 ## Prérequis
 - **Compilateur C++** : GCC 12.0 ou supérieur.
