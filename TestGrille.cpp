@@ -40,7 +40,7 @@ bool TestGrille::comparerGrilles(const Grille& grille, const std::string& fichie
 }
 
 void TestGrille::executerTests() {
-    Grille grille;
+    Grille& grille = Grille::getInstance();
     grille.initialiser("etat_initial.txt");
 
     // Simuler les itérations
@@ -49,7 +49,7 @@ void TestGrille::executerTests() {
         std::string fichierAttendu = "resultats_out/iteration_" + std::to_string(i + 1) + ".txt";
         
         // Réinitialiser la grille avec les dimensions attendues
-        Grille grilleAttendue;
+        Grille grilleAttendue = Grille::getInstance();
         grilleAttendue.initialiser(fichierAttendu);
 
         if (!comparerGrilles(grilleAttendue, fichierAttendu)) {

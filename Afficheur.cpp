@@ -1,11 +1,14 @@
 #include "Afficheur.h"
 
+// Constructeur de l'afficheur
 Afficheur::Afficheur(Grille& grille) : grille(grille), fenetre(sf::VideoMode(800, 600), "Jeu de la Vie"), delai(sf::milliseconds(100)) {
+    grille.ajouterObserver(this);
     int largeur = grille.obtenirLargeur();
     int hauteur = grille.obtenirHauteur();
     tailleCellule = std::min(fenetre.getSize().x / largeur, fenetre.getSize().y / hauteur);
 }
 
+// Lancer l'affichage
 void Afficheur::lancer() {
     while (fenetre.isOpen()) {
         gererEvenements();
@@ -21,6 +24,7 @@ void Afficheur::lancer() {
     }
 }
 
+// Gérer les événements de la fenêtre
 void Afficheur::gererEvenements() {
     sf::Event evenement;
     while (fenetre.pollEvent(evenement)) {
@@ -36,6 +40,7 @@ void Afficheur::gererEvenements() {
     }
 }
 
+// Dessiner la grille
 void Afficheur::dessiner() {
     int largeur = grille.obtenirLargeur();
     int hauteur = grille.obtenirHauteur();
@@ -52,4 +57,11 @@ void Afficheur::dessiner() {
             fenetre.draw(celluleShape);
         }
     }
+}
+
+// Mettre à jour l'affichage
+void Afficheur::mettreAJour() {
+    fenetre.clear(sf::Color::Black);
+    dessiner();
+    fenetre.display();
 }
