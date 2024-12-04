@@ -76,6 +76,16 @@ int Grille::compterVoisinsVivants(int x, int y) const {
     return count;
 }
 
+// Méthode pour obtenir la hauteur de la grille
+int Grille::obtenirHauteur() const {
+    return hauteur;
+}
+
+// Méthode pour obtenir une cellule spécifique de la grille
+const Cellule& Grille::obtenirCellule(int x, int y) const {
+    return *cellules[y][x];
+}
+
 // Méthode pour écrire l'état de la grille dans un fichier
 void Grille::ecrireEtatDansFichier(const std::string& nomFichier) const {
     std::ofstream fichier(nomFichier);
@@ -98,14 +108,4 @@ void Grille::ecrireEtatDansFichier(const std::string& nomFichier) const {
 // Méthode pour obtenir la largeur de la grille
 int Grille::obtenirLargeur() const {
     return largeur;
-}
-
-// Méthode pour obtenir la hauteur de la grille
-int Grille::obtenirHauteur() const {
-    return hauteur;
-}
-
-// Méthode pour obtenir une cellule spécifique de la grille
-const Cellule& Grille::obtenirCellule(int x, int y) const {
-    return *cellules[y][x];
 }

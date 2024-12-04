@@ -1,6 +1,5 @@
 #include <iostream>
 #include "Jeu.h"
-#include "TestGrille.h"
 
 int main(int argc, char* argv[]) {
     if (argc < 2) {
@@ -15,7 +14,6 @@ int main(int argc, char* argv[]) {
     std::cout << "Choisissez le mode de fonctionnement :" << std::endl;
     std::cout << "1. Mode Console" << std::endl;
     std::cout << "2. Mode Graphique" << std::endl;
-    std::cout << "3. Exécuter les tests" << std::endl;
     std::cin >> choix;
 
     if (choix == 1) {
@@ -25,8 +23,6 @@ int main(int argc, char* argv[]) {
         jeu.executerModeConsole(iterations);
     } else if (choix == 2) {
         jeu.executerModeGraphique();
-    } else if (choix == 3) {
-        TestGrille::executerTests();
     } else {
         std::cerr << "Choix invalide." << std::endl;
         return EXIT_FAILURE;
