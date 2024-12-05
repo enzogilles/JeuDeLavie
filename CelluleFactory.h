@@ -10,7 +10,7 @@ class CelluleFactory {
 public:
     static Cellule* creerCellule(int etat) {
         if (etat == -1) {
-            return new CelluleObstacle(false);
+            return new CelluleObstacle(); // Utiliser le constructeur par défaut
         } else {
             CelluleVivante* cellule = new CelluleVivante();
             cellule->definirEtat(etat == 1);

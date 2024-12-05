@@ -8,8 +8,6 @@
 // Classe représentant une cellule vivante
 class CelluleVivante : public Cellule {
 private:
-    bool estVivante; // État actuel de la cellule
-    bool prochainEtat; // Prochain état de la cellule
     StrategieEtat* strategie; // Stratégie pour déterminer le prochain état
 
 public:

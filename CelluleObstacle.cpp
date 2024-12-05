@@ -2,7 +2,16 @@
 #include "CelluleObstacle.h"
 
 // Constructeur de la cellule obstacle
-CelluleObstacle::CelluleObstacle(bool etat) : estVivante(etat) {}
+CelluleObstacle::CelluleObstacle() {
+    estVivante = false;
+    prochainEtat = false;
+}
+
+// Nouveau constructeur prenant un booléen
+CelluleObstacle::CelluleObstacle(bool etat) {
+    estVivante = etat;
+    prochainEtat = etat;
+}
 
 // Obtenir l'état de la cellule obstacle
 bool CelluleObstacle::obtenirEtat() const {

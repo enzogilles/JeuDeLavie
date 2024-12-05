@@ -3,7 +3,10 @@
 #include "StrategieEtatVivante.h"
 
 // Constructeur de la cellule vivante
-CelluleVivante::CelluleVivante() : estVivante(false), prochainEtat(false), strategie(new StrategieEtatVivante()) {}
+CelluleVivante::CelluleVivante() : strategie(new StrategieEtatVivante()) {
+    estVivante = false;
+    prochainEtat = false;
+}
 
 // Destructeur de la cellule vivante
 CelluleVivante::~CelluleVivante() {

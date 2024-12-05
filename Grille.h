@@ -25,6 +25,10 @@ public:
     int obtenirLargeur() const; // Obtenir la largeur de la grille
     int obtenirHauteur() const; // Obtenir la hauteur de la grille
     const Cellule& obtenirCellule(int x, int y) const; // Obtenir une cellule spécifique
+
+    // Nouvelle méthode pour vérifier la validité de la grille
+    bool verifierGrille(const std::vector<std::vector<int>>& grilleAttendue) const;
+    bool verifierGrilleApresIterations(int iterations);
 };
 
 #endif // GRILLE_H

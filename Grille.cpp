@@ -109,3 +109,4 @@ void Grille::ecrireEtatDansFichier(const std::string& nomFichier) const {
 int Grille::obtenirLargeur() const {
     return largeur;
 }
+
