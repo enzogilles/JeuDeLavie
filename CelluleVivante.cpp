@@ -9,7 +9,7 @@ CelluleVivante::CelluleVivante() {
 
 // Destructeur de la cellule vivante
 CelluleVivante::~CelluleVivante() {
-    // Pas de stratégie à supprimer
+    
 }
 
 // Obtenir l'état actuel de la cellule

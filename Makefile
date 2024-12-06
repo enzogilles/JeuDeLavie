@@ -8,7 +8,7 @@ BIN_DIR = bin
 TARGET = $(BIN_DIR)/jeu_de_la_vie
 
 # Liste des fichiers sources
-SRC = $(wildcard $(SRC_DIR)/*.cpp) main.cpp Jeu.cpp Grille.cpp Afficheur.cpp CelluleVivante.cpp CelluleObstacle.cpp Observable.cpp
+SRC = $(wildcard $(SRC_DIR)/*.cpp) main.cpp Jeu.cpp Grille.cpp Afficheur.cpp CelluleVivante.cpp CelluleObstacle.cpp Observable.cpp test_grille.cpp
 OBJ = $(SRC:%.cpp=$(OBJ_DIR)/%.o)
 
 # Règles
