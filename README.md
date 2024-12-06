@@ -60,6 +60,18 @@ Fonctionnera seulement si vous avez bien installer et configurer l'environnement
 
 Tout dépend de vos préférences.
 
+## 🔧 **Implémentation en C++**
+- **Langage :** C++  
+- **Bibliothèque graphique :** SFML.  
+- **Structure du projet :**  
+   - `main.cpp` : Contient le point d'entrée du programme, gère la logique principale de la simulation et l'interface utilisateur (mode console ou graphique).  
+   - `Cellule.h/.cpp` : Définit la classe Cellule, avec ses états (vivant ou mort), et les méthodes pour calculer son prochain état en fonction de son voisinage.  
+   - `Grille.h/.cpp` : Gère la grille de cellules.  
+   - `Fichier.h/.cpp` : Contient les fonctions pour lire un fichier d'entrée contenant l'état initial des cellules et écrire les états successifs dans des fichiers de sortie.  
+   - `Makefile` : Script de compilation automatisé pour construire le projet, en gérant les dépendances et les règles pour produire l'exécutable.  
+   - `Input.txt` : Fichier d'entrée de base, contenant la taille de la grille et l'état initial des cellules. Ce fichier est utilisé pour initialiser la simulation.  
+   - `\Input.txt_out` : Dossier de sortie par défaut, où sont sauvegardés les fichiers correspondant aux états successifs de la grille à chaque itération pour le fichier d'entrée par default (Input.txt).
+
 
 
 ## Compilation & exécution
@@ -106,23 +118,6 @@ L'utilisateur peut visualiser l'évolution des cellules en temps réel.
 
 
 ![image](https://github.com/user-attachments/assets/d2339f30-ac1b-47c7-aa77-45a083f96a57)
-
-
-
-## 🔧 **Implémentation en C++**
-- **Langage :** C++  
-- **Bibliothèque graphique :** SFML.  
-- **Structure du projet :**  
-   - `main.cpp` : Contient le point d'entrée du programme, gère la logique principale de la simulation et l'interface utilisateur (mode console ou graphique).  
-   - `Cellule.h/.cpp` : Définit la classe Cellule, avec ses états (vivant ou mort), et les méthodes pour calculer son prochain état en fonction de son voisinage.  
-   - `Grille.h/.cpp` : Gère la grille de cellules.  
-   - `Fichier.h/.cpp` : Contient les fonctions pour lire un fichier d'entrée contenant l'état initial des cellules et écrire les états successifs dans des fichiers de sortie.  
-   - `Makefile` : Script de compilation automatisé pour construire le projet, en gérant les dépendances et les règles pour produire l'exécutable.  
-   - `Input.txt` : Fichier d'entrée de base, contenant la taille de la grille et l'état initial des cellules. Ce fichier est utilisé pour initialiser la simulation.  
-   - `\Input.txt_out` : Dossier de sortie par défaut, où sont sauvegardés les fichiers correspondant aux états successifs de la grille à chaque itération pour le fichier d'entrée par default (Input.txt).
-
-
-
   
 
 Projet d'étude réalisé dans le cadre du bloc POO de la CPIA2 du CESI.
