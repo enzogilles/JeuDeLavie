@@ -1,10 +1,39 @@
 # JeuDeLavie 
 
 ## Description  
-Ce projet implémente le **Jeu de la Vie** de John Conway en C++, avec deux modes d'exécution :
 
-- **Mode Console** : Affiche l'évolution des cellules dans la console et enregistre un nombre de fichiers voulu sur l'ordinateur après chaque itération.
-- **Mode Graphique** : Affiche une visualisation dynamique des cellules dans une fenêtre graphique grâce à la bibliothèque SFML.
+Le jeu de la vie désigne un automate cellulaire proposé par le mathématicien John Conway. 
+Il décrit l’évolution d’une population de cellules sur un intervalle de temps discret. 
+Les cellules placées dans une grille rectangulaire deux dimensionnelle sont caractérisées par deux états ; elles sont soit vivantes, soit mortes. 
+A l’exclusion des bordures, le voisinage d’une cellule est formé par 8 autres cellules directement adjacentes. 
+Pour passer de l’itération tt à l’itération t+1t+1, l’état des cellules dans la grille est actualisé selon les règles suivantes :
+
+- Une cellule morte possédant exactement trois voisines vivantes devient vivante.
+- Une cellule vivante possédant deux ou trois voisines vivantes reste vivante, sinon elle meurt.
+
+Vous proposerez une implémentation en C++ du jeu de la vie en vous reposant sur les concepts de la programmation orientée objet. 
+En entrée, votre programme consommera un fichier dont la première ligne permettra de spécifier la taille de la grille. 
+Suivra une matrice de booléens, décrivant l’état initial, vivant (1) ou mort (0) des cellules.
+
+![image](https://github.com/user-attachments/assets/6fc017e2-018a-4105-9f6a-d13143e5c615)
+
+
+
+## Fonctionnalités 🔧
+- Initialisation d'une grille à partir d'un fichier.
+- Simulation de l'évolution des cellules selon les règles du Jeu de la Vie.
+- Deux modes d'affichage :
+  - Console : Affiche chaque itération dans le terminal.
+  - Graphique : Visualise l'évolution des cellules dans une interface interactive.
+- Sauvegarde de l'état final dans un fichier (Mode Console).
+- Gestion des dimensions dynamiques de la grille.
+
+Lors de la phase de conception, modéliser votre programme avec les diagrammes suivants :
+- Diagramme de cas d’utilisation.
+- Diagramme de classe.
+- Diagramme d’activité.
+- Diagramme de séquence.
+
 
 
 # Installation 
@@ -31,20 +60,6 @@ Fonctionnera seulement si vous avez bien installer et configurer l'environnement
 
 Tout dépend de vos préférences.
 
-## Fonctionnalités 🔧
-- Initialisation d'une grille à partir d'un fichier.
-- Simulation de l'évolution des cellules selon les règles du Jeu de la Vie.
-- Deux modes d'affichage :
-  - Console : Affiche chaque itération dans le terminal.
-  - Graphique : Visualise l'évolution des cellules dans une interface interactive.
-- Sauvegarde de l'état final dans un fichier (Mode Console).
-- Gestion des dimensions dynamiques de la grille.
-
-Lors de la phase de conception, modéliser votre programme avec les diagrammes suivants :
-- Diagramme de cas d’utilisation.
-- Diagramme de classe.
-- Diagramme d’activité.
-- Diagramme de séquence.
 
 
 ## Compilation & exécution
