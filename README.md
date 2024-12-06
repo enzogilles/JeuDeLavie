@@ -46,12 +46,6 @@ Lors de la phase de conception, modéliser votre programme avec les diagrammes s
 - Diagramme d’activité.
 - Diagramme de séquence.
 
-## Prérequis
-- **Compilateur C++** : GCC 12.0 ou supérieur.
-- **Bibliothèque SFML** : Installez SFML en exécutant :
-  ```sh
-  sudo apt-get install libsfml-dev
-  ```
 
 ## Compilation & exécution
 1. Clonez le dépôt :
