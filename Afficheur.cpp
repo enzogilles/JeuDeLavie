@@ -1,11 +1,12 @@
 #include "Afficheur.h"
 
 // Constructeur de l'afficheur
-Afficheur::Afficheur(Grille& grille) : grille(grille), fenetre(sf::VideoMode(800, 600), "Jeu de la Vie"), delai(sf::milliseconds(100)) {
+Afficheur::Afficheur(Grille& grille) : grille(grille), delai(sf::milliseconds(100)) {
     grille.ajouterObserver(this);
     int largeur = grille.obtenirLargeur();
     int hauteur = grille.obtenirHauteur();
-    tailleCellule = std::min(fenetre.getSize().x / largeur, fenetre.getSize().y / hauteur);
+    tailleCellule = std::min(800 / largeur, 600 / hauteur);
+    fenetre.create(sf::VideoMode(largeur * tailleCellule, hauteur * tailleCellule), "Jeu de la Vie");
 }
 
 // Lancer l'affichage
