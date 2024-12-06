@@ -1,12 +1,36 @@
 # JeuDeLavie 
 
-## Description
+## Description  
 Ce projet implémente le **Jeu de la Vie** de John Conway en C++, avec deux modes d'exécution :
 
 - **Mode Console** : Affiche l'évolution des cellules dans la console et enregistre un nombre de fichiers voulu sur l'ordinateur après chaque itération.
 - **Mode Graphique** : Affiche une visualisation dynamique des cellules dans une fenêtre graphique grâce à la bibliothèque SFML.
 
-🔧 ## Fonctionnalités 🔧
+
+# Installation 
+Tout les membres de l'équipe avait Windows comme OS lors de ce projet.
+
+On a utiliser comme éditeur de texte **Visual Studio Community 2022**.
+
+**Visual Studio Community** est téléchargeable depuis ce lien :
+https://visualstudio.microsoft.com/fr/vs/community/
+
+Ensuite configurer l'installation en choisissant le langage C++.
+
+![image de config C++ dans Visual Studio Community 2022](image_visual_studio_option_dekstop.png)
+
+Pensez aussi à installer la bibliothèque **SFML** pour manipuler l'interface graphique.
+Lien vers le site officiel pour installer **SFML** :
+https://www.sfml-dev.org/tutorials/2.6/start-vc.php
+
+Le code de ce dépot est compilable avec le compilateur **g++**.
+
+Vous pouvez aussi utiliser le débuggeur de Visual Studio Community 2022.
+Fonctionnera seulement si vous avez bien installer et configurer l'environnement par rapport à ces bibliothèques.
+
+Tout dépend de vos préférences.
+
+## Fonctionnalités 🔧
 - Initialisation d'une grille à partir d'un fichier.
 - Simulation de l'évolution des cellules selon les règles du Jeu de la Vie.
 - Deux modes d'affichage :
