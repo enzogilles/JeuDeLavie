@@ -36,6 +36,18 @@ void Afficheur::gererEvenements() {
                 delai -= sf::milliseconds(10);
             } else if (evenement.key.code == sf::Keyboard::Down) {
                 delai += sf::milliseconds(10);
+            } else if (evenement.key.code == sf::Keyboard::P) {
+                std::vector<std::vector<int>> glider = {
+                    {0, 1, 0},
+                    {0, 0, 1},
+                    {1, 1, 1}
+                };
+                grille.placerMotif(glider, 10, 10);
+            } else if (evenement.key.code == sf::Keyboard::M) {
+                std::vector<std::vector<int>> blinker = {
+                    {1, 1, 1}
+                };
+                grille.placerMotif(blinker, 15, 15);
             }
         }
     }
@@ -54,7 +66,11 @@ void Afficheur::dessiner() {
             if (cellule.estObstacle()) {
                 celluleShape.setFillColor(sf::Color::Red); // Couleur pour les obstacles
             } else if (cellule.obtenirEtat()) {
-                celluleShape.setFillColor(sf::Color::White); // Couleur pour les cellules vivantes
+                if (cellule.estNouveau()) {
+                    celluleShape.setFillColor(sf::Color::Green); // Couleur pour les nouvelles cellules vivantes
+                } else {
+                    celluleShape.setFillColor(sf::Color::White); // Couleur pour les cellules vivantes
+                }
             } else {
                 celluleShape.setFillColor(sf::Color::Blue); // Couleur pour les cellules mortes
             }

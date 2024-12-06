@@ -5,6 +5,7 @@ class Cellule {
 protected:
     bool estVivante;
     bool prochainEtat;
+    bool nouveau; // Propriété pour indiquer si la cellule est nouvelle
 
 public:
     virtual ~Cellule() = default;
@@ -13,6 +14,8 @@ public:
     virtual void determinerProchainEtat(int voisinsVivants) = 0; // Déterminer le prochain état de la cellule
     virtual void mettreAJourEtat() = 0; // Mettre à jour l'état de la cellule
     virtual bool estObstacle() const { return false; } // Ajoutez cette ligne
+    void definirNouveau(bool estNouveau) { nouveau = estNouveau; } // Définir si la cellule est nouvelle
+    bool estNouveau() const { return nouveau; } // Vérifier si la cellule est nouvelle
 };
 
 #endif // CELLULE_H

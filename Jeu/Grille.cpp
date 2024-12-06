@@ -117,3 +117,19 @@ int Grille::obtenirLargeur() const {
     return largeur;
 }
 
+// Méthode pour placer un motif dans la grille
+void Grille::placerMotif(const std::vector<std::vector<int>>& motif, int x, int y) {
+    int motifHauteur = motif.size();
+    int motifLargeur = motif[0].size();
+
+    for (int i = 0; i < motifHauteur; ++i) {
+        for (int j = 0; j < motifLargeur; ++j) {
+            int nx = (x + i) % hauteur;
+            int ny = (y + j) % largeur;
+            delete cellules[nx][ny];
+            cellules[nx][ny] = CelluleFactory::creerCellule(motif[i][j]);
+            cellules[nx][ny]->definirNouveau(true); // Marquer la cellule comme nouvelle
+        }
+    }
+}
+

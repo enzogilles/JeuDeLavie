@@ -26,7 +26,7 @@ public:
     int obtenirLargeur() const; // Obtenir la largeur de la grille
     int obtenirHauteur() const; // Obtenir la hauteur de la grille
     const Cellule& obtenirCellule(int x, int y) const; // Obtenir une cellule spécifique
-
+    void placerMotif(const std::vector<std::vector<int>>& motif, int x, int y); // Placer un motif sur la grille
 
     ~Grille(); // Destructeur
 };
