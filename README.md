@@ -40,18 +40,34 @@ Lors de la phase de conception, modéliser votre programme avec les diagrammes s
    make
    ```
 
-3. Nettoyez les fichiers objets et binaires :
-   ```sh
-   make clean
-   ```
+3. Choix proposé : 
+
+a) Mode Console 
+
+L'utilisateur doit entrer le nombre d'itérations souhaité.
+Le programme affichera l'évolution des cellules dans le terminal et enregistrera l'état de la grille après chaque itération dans des fichiers.
+
+
+b) Mode Graphique :
+
+La simulation démarre automatiquement dans une fenêtre graphique.
+L'utilisateur peut visualiser l'évolution des cellules en temps réel.
+
 
 4. Exécutez le programme :
    ```sh
    LIBGL_ALWAYS_SOFTWARE=1 ./bin/jeu_de_la_vie etat_initial.txt
    ```
 
-5. Choisissez le mode de fonctionnement :
-   - Mode Console : Entrez le nombre d'itérations souhaité.
-   - Mode Graphique : La simulation démarre automatiquement.
+
+   
+
+!!!!!!! SI L'UTILISATEUR RECONTRE DES SOUCIS :!!!!!!!
+
+
+1. Nettoyez les fichiers objets et binaires :
+   ```sh
+   make clean
+   ```
 
 Projet d'étude réalisé dans le cadre du bloc POO de la CPIA2 du CESI.
