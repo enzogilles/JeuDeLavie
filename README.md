@@ -1,10 +1,15 @@
-Votre projet contient plusieurs fichiers et répertoires, notamment des codes sources en C++ pour le "Jeu de la Vie", des diagrammes, et des résultats d'exécution. Voici un exemple de structure de README, que je vais personnaliser pour votre projet. Je vais intégrer des sections informatives et un sommaire avec des émojis pour une meilleure présentation.
-
-### **Contenu proposé pour le README :**
-
 # 🕹️ Jeu de la Vie
 
-Bienvenue dans le **Jeu de la Vie**, une simulation basée sur des automates cellulaires ! Ce projet implémente une version personnalisée du célèbre concept de Conway, avec des fonctionnalités supplémentaires et une organisation modulaire.
+Le **Jeu de la Vie** est un automate cellulaire conçu par le mathématicien **John Conway**. Ce concept illustre l'évolution d'une population de cellules dans une grille rectangulaire bidimensionnelle, selon des règles simples mais fascinantes.
+
+### 🔍 Principe
+- Chaque cellule est dans l'un des deux états suivants : **vivante** ou **morte**.
+- Le voisinage de chaque cellule inclut les 8 cellules adjacentes.
+- À chaque itération, l'état des cellules est mis à jour selon les règles suivantes :
+  1. Une cellule morte possédant **exactement trois voisines vivantes** devient vivante.
+  2. Une cellule vivante reste vivante si elle a **deux ou trois voisines vivantes** ; sinon, elle meurt.
+
+Cette simulation met en lumière des phénomènes complexes à partir de règles simples, servant de métaphore pour la vie, l'évolution et les systèmes dynamiques.
 
 ---
 
@@ -15,8 +20,6 @@ Bienvenue dans le **Jeu de la Vie**, une simulation basée sur des automates cel
 3. [🚀 Utilisation](#-utilisation)
 4. [📜 Fonctionnalités](#-fonctionnalités)
 5. [📊 Diagrammes et Documentation](#-diagrammes-et-documentation)
-6. [🤝 Contributions](#-contributions)
-7. [📧 Contact](#-contact)
 
 ---
 
@@ -34,7 +37,7 @@ Bienvenue dans le **Jeu de la Vie**, une simulation basée sur des automates cel
 
 ### Prérequis
 - Un compilateur C++ compatible (par ex. GCC ou Clang)
-- Make (optionnel pour utiliser le `Makefile` fourni)
+- Make 
 
 ### Étapes
 1. Clonez le projet :
@@ -67,10 +70,19 @@ Bienvenue dans le **Jeu de la Vie**, une simulation basée sur des automates cel
 
 ## 📜 Fonctionnalités
 
-- 📌 **Grille dynamique** : Une grille où les cellules peuvent être vivantes, mortes ou obstacles.
-- ⚡ **Simulation rapide** : Génère plusieurs itérations et les sauvegarde automatiquement.
-- 🧩 **Architecture modulaire** : Chaque classe a un rôle précis pour faciliter l'extension et la maintenance.
-- 🖥️ **Affichage configurable** : Options pour visualiser les résultats.
+### Fonctionnalités principales
+1. **Chargement de l'état initial** : L'utilisateur fournit un fichier avec la taille de la grille et l'état initial des cellules (vivantes ou mortes).
+2. **Simulation selon les règles de Conway** :
+   - Une cellule morte avec exactement trois voisines vivantes devient vivante.
+   - Une cellule vivante avec deux ou trois voisines vivantes reste vivante, sinon elle meurt.
+3. **Modes de fonctionnement** :
+   - **Mode console** : Produit les `n` premières itérations, avec export des résultats dans des fichiers.
+   - **Mode graphique** : Affiche une grille interactive où les cellules évoluent en temps réel.
+4. **Critères d'arrêt** : Simulation terminée lorsque l'automate n'évolue plus ou qu'un nombre maximal d'itérations est atteint.
+
+### Extensions 
+1. **Grille torique** : Les bords de la grille sont connectés, créant une continuité entre les extrémités.
+2. **Cellules obstacle** : Des cellules statiques (vivantes ou mortes) qui ne changent pas d'état.
 
 ---
 
@@ -84,7 +96,4 @@ Bienvenue dans le **Jeu de la Vie**, une simulation basée sur des automates cel
 
 ---
 
-
 Merci d'utiliser le **Jeu de la Vie** ! 🌟
-
-
