@@ -3,9 +3,8 @@
 ## Description
 Ce projet implémente le **Jeu de la Vie** de John Conway en C++, avec deux modes d'exécution :
 
-- **Mode Console** : Affiche l'évolution des cellules dans la console.
+- **Mode Console** : Affiche l'évolution des cellules dans la console et enregistre un nombre de fichiers voulu sur l'ordinateur après chaque itération.
 - **Mode Graphique** : Affiche une visualisation dynamique des cellules dans une fenêtre graphique grâce à la bibliothèque SFML.
-
 
 ## Fonctionnalités
 - Initialisation d'une grille à partir d'un fichier.
@@ -22,19 +21,37 @@ Lors de la phase de conception, modéliser votre programme avec les diagrammes s
 - Diagramme d’activité.
 - Diagramme de séquence.
 
-
-## Installation
-
-
 ## Prérequis
 - **Compilateur C++** : GCC 12.0 ou supérieur.
 - **Bibliothèque SFML** : Installez SFML en exécutant :
+  ```sh
+  sudo apt-get install libsfml-dev
+  ```
 
+## Compilation & exécution
+1. Clonez le dépôt :
+   ```sh
+   git clone <url_du_dépôt>
+   cd <nom_du_dépôt>
+   ```
 
-## Compilation & execution
+2. Compilez le projet :
+   ```sh
+   make
+   ```
 
--Se placer dans /src et compiler avec g++ -Wall -Wextra -pedantic -I../include *.cpp -o ../bin/JeuDeLaVie -lsfml-gr
-aphics -lsfml-window -lsfml-system
--Se placer dans bin pour executer le programme avec ./JeuDeLaVie.
+3. Nettoyez les fichiers objets et binaires :
+   ```sh
+   make clean
+   ```
 
-Projet d'étude réaliser dans le cadre du bloc POO de la CPIA2 du CESI.
+4. Exécutez le programme :
+   ```sh
+   LIBGL_ALWAYS_SOFTWARE=1 ./bin/jeu_de_la_vie etat_initial.txt
+   ```
+
+5. Choisissez le mode de fonctionnement :
+   - Mode Console : Entrez le nombre d'itérations souhaité.
+   - Mode Graphique : La simulation démarre automatiquement.
+
+Projet d'étude réalisé dans le cadre du bloc POO de la CPIA2 du CESI.
