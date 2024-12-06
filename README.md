@@ -11,6 +11,14 @@ Le **Jeu de la Vie** est un automate cellulaire conçu par le mathématicien **J
 
 Cette simulation met en lumière des phénomènes complexes à partir de règles simples, servant de métaphore pour la vie, l'évolution et les systèmes dynamiques.
 
+
+
+### Photos de notre jeu 
+
+
+![image](https://github.com/user-attachments/assets/ee6ff9b1-a011-4027-9f54-aec07ecb242a)
+
+
 ---
 
 ## 🌟 Sommaire
@@ -83,6 +91,8 @@ Cette simulation met en lumière des phénomènes complexes à partir de règles
 ### Extensions 
 1. **Grille torique** : Les bords de la grille sont connectés, créant une continuité entre les extrémités.
 2. **Cellules obstacle** : Des cellules statiques (vivantes ou mortes) qui ne changent pas d'état.
+3. Placement de constructions pré-programmées sur la grille. Utiliser la touche **P** et **M** pour y ajouter un blinker ou glinder sur la grille lors de l’exécution.
+4. Ajout personnel d'un code couleur permettant d'identifier les cellules vivantes (Blanc), mortes(Bleu), ajoutées(Vert), bloquée (Rouge)
 
 ---
 
