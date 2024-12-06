@@ -3,13 +3,9 @@
 #define CELLULEVIVANTE_H
 
 #include "Cellule.h"
-#include "StrategieEtat.h"
 
 // Classe représentant une cellule vivante
 class CelluleVivante : public Cellule {
-private:
-    StrategieEtat* strategie; // Stratégie pour déterminer le prochain état
-
 public:
     CelluleVivante(); // Constructeur
     ~CelluleVivante(); // Destructeur

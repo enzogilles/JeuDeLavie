@@ -24,7 +24,7 @@ void Afficheur::lancer() {
     }
 }
 
-// Gérer les événements de la fenêtre
+// Gérer les événements de la fenêtre pour la vitesse d'execution
 void Afficheur::gererEvenements() {
     sf::Event evenement;
     while (fenetre.pollEvent(evenement)) {
@@ -49,10 +49,13 @@ void Afficheur::dessiner() {
         for (int j = 0; j < largeur; ++j) {
             sf::RectangleShape celluleShape(sf::Vector2f(tailleCellule - 1, tailleCellule - 1));
             celluleShape.setPosition(j * tailleCellule, i * tailleCellule);
-            if (grille.obtenirCellule(i, j).obtenirEtat()) {
-                celluleShape.setFillColor(sf::Color::White);
+            const Cellule& cellule = grille.obtenirCellule(i, j);
+            if (cellule.estObstacle()) {
+                celluleShape.setFillColor(sf::Color::Red); // Couleur pour les obstacles
+            } else if (cellule.obtenirEtat()) {
+                celluleShape.setFillColor(sf::Color::White); // Couleur pour les cellules vivantes
             } else {
-                celluleShape.setFillColor(sf::Color::Black);
+                celluleShape.setFillColor(sf::Color::Blue); // Couleur pour les cellules mortes
             }
             fenetre.draw(celluleShape);
         }

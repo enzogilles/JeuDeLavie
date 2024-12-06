@@ -8,10 +8,24 @@ Jeu::Jeu(const std::string& fichierEntree) : grille(Grille::getInstance()), nomb
     grille.initialiser(fichierEntree);
 }
 
+Jeu::~Jeu() {
+    // Destructeur
+}
+
+// Fonction pour nettoyer le dossier resultats_out
+void nettoyerDossierResultats() {
+    std::string dossierSortie = "resultats_out";
+    if (std::filesystem::exists(dossierSortie)) {
+        std::filesystem::remove_all(dossierSortie);
+    }
+    std::filesystem::create_directory(dossierSortie);
+}
+
 // Exécuter le jeu en mode console
 void Jeu::executerModeConsole(int iterations) {
+    nettoyerDossierResultats(); // Nettoyer le dossier avant de commencer
+
     std::string dossierSortie = "resultats_out";
-    std::filesystem::create_directory(dossierSortie);
 
     for (int i = 0; i < iterations; ++i) {
         std::string nomFichier = dossierSortie + "/iteration_" + std::to_string(i) + ".txt";
@@ -25,4 +39,9 @@ void Jeu::executerModeConsole(int iterations) {
 void Jeu::executerModeGraphique() {
     Afficheur afficheur(grille);
     afficheur.lancer();
+}
+
+// Méthode pour obtenir la grille
+Grille& Jeu::obtenirGrille() {
+    return grille;
 }

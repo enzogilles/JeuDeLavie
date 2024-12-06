@@ -17,6 +17,15 @@ Grille& Grille::getInstance() {
 // Constructeur de la classe Grille, initialise les dimensions à zéro
 Grille::Grille() : largeur(0), hauteur(0) {}
 
+// Destructeur de la classe Grille
+Grille::~Grille() {
+    for (int i = 0; i < hauteur; ++i) {
+        for (int j = 0; j < largeur; ++j) {
+            delete cellules[i][j];
+        }
+    }
+}
+
 // Méthode pour initialiser la grille à partir d'un fichier
 void Grille::initialiser(const std::string& nomFichier) {
     std::ifstream fichier(nomFichier);
@@ -66,11 +75,9 @@ int Grille::compterVoisinsVivants(int x, int y) const {
     for (int i = -1; i <= 1; ++i) {
         for (int j = -1; j <= 1; ++j) {
             if (i == 0 && j == 0) continue;
-            int nx = x + i;
-            int ny = y + j;
-            if (nx >= 0 && nx < largeur && ny >= 0 && ny < hauteur) {
-                count += cellules[ny][nx]->obtenirEtat();
-            }
+            int nx = (x + i + largeur) % largeur;
+            int ny = (y + j + hauteur) % hauteur;
+            count += cellules[ny][nx]->obtenirEtat();
         }
     }
     return count;

@@ -13,6 +13,7 @@ public:
     void definirEtat(bool etat) override;
     void determinerProchainEtat(int voisinsVivants) override;
     void mettreAJourEtat() override;
+    bool estObstacle() const override { return true; } // Ajoutez cette ligne
 };
 
 #endif // CELLULEOBSTACLE_H

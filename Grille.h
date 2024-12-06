@@ -17,6 +17,7 @@ private:
 
 public:
     static Grille& getInstance(); // Méthode pour obtenir l'instance unique
+    
 
     void initialiser(const std::string& nomFichier); // Initialiser la grille à partir d'un fichier
     void mettreAJour(); // Mettre à jour l'état de la grille
@@ -26,9 +27,8 @@ public:
     int obtenirHauteur() const; // Obtenir la hauteur de la grille
     const Cellule& obtenirCellule(int x, int y) const; // Obtenir une cellule spécifique
 
-    // Nouvelle méthode pour vérifier la validité de la grille
-    bool verifierGrille(const std::vector<std::vector<int>>& grilleAttendue) const;
-    bool verifierGrilleApresIterations(int iterations);
+
+    ~Grille(); // Destructeur
 };
 
 #endif // GRILLE_H
