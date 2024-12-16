@@ -59,7 +59,7 @@ Cette simulation met en lumière des phénomènes complexes à partir de règles
    ```
 3. Exécutez le binaire généré :
    ```bash
-   ./bin/jeu_de_la_vie
+   LIBGL_ALWAYS_SOFTWARE=1 ./bin/jeu_de_la_vie etat_initial.txt
    ```
 
 ---
@@ -70,7 +70,7 @@ Cette simulation met en lumière des phénomènes complexes à partir de règles
 1. Placez le fichier `etat_initial.txt` dans le répertoire `Jeu/`.
 2. Lancez le programme :
    ```bash
-   ./bin/jeu_de_la_vie
+   LIBGL_ALWAYS_SOFTWARE=1 ./bin/jeu_de_la_vie etat_initial.txt
    ```
 3. Les résultats seront générés dans le dossier `resultats_out/`.
 
